@@ -1,0 +1,154 @@
+<style>
+body{ 
+    padding:10;
+    margin:10;
+    /*background-color:white;   */
+    /*background:url("https://images.app.goo.gl/RVWooBsQZ8U2ixhAA");*/
+    /*background-image: url('/assets/robot1.jpg'); */
+    background: url('pique-macho.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /*D:\Universidad\Sexto Semestre\Ing de Software\Ruby\Simulador_Robot\template-ucb2019-2\coverage\assets*/
+    background-size: cover;
+}
+ 
+.title h1{
+    text-align: center;
+    color: #4c4c4c;
+    font-size:30px;
+    padding-top: 20px;
+    margin: 0;
+}
+.form_wrap{
+    width: 860px;
+    height: 630px;
+    margin: 0px auto 90px;
+    /*display: flex;*/
+    background: linear-gradient(to bottom, rgba(183,222,237,1) 0%, rgba(183,222,237,1) 23%, rgba(33,180,226,1) 59%, rgba(101,148,230,1) 96%, rgba(101,148,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#6594e6', GradientType=0 );
+    /*background: #4c4c4c;*/
+    /*background:url('../img/robot1.jpg');*/
+    border-radius: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #4c4c4c;
+    color: #4c4c4c;
+    text-align: center;
+    vertical-align:left;
+    /*opacity: 5;*/
+}
+input[type=text] {
+    padding: 5px 5px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid #4c4c4c;
+    border-radius: 4px;
+}
+input[type=submit] {
+    background-color: #4c4c4c;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    /*cursor: pointer;*/
+    border-radius: 4px;
+    float:none;
+    text-align:center;
+}
+select[name= 'ori'] {
+    background-color: #4c4c4c;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    margin: 4px 4px;
+    /*cursor: pointer;*/
+    border-radius: 4px;
+    float:none;
+    text-align:center;
+}
+button {
+    background-color: #4c4c4c;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    margin: 4px 4px;
+    /*cursor: pointer;*/
+    border-radius: 4px;
+    float:none;
+    text-align:center;
+}
+.contet-prev , .content-after{
+    text-align:center;
+    padding:50px 0%;
+}
+</style>
+<body>
+<img src='./pique-macho.jpg'>
+<section class="form_wrap">
+    <div class="title">
+        <center><h1>Resultados</h1></center> 
+    </div>
+    <div class="content-prev">
+            <h1> Tamaño del mapa:  [<%=@@terreno.getTamX%> x <%=@@terreno.getTamY%>] </h1>
+
+            <h1> Coordenades iniciales </h1>
+
+            <h2>
+                <% if @@prevResult.getX.to_i<=@@terreno.getTamX.to_i and @@prevResult.getX.to_i>=0 %>
+                    Coordenadas finales en x: <%=@@prevResult.getX%>
+                <% else %>
+                    Coordenadas en x erroneas
+                <% end %>
+            </h2>
+
+            <h2>
+                <% if @@prevResult.getY.to_i<=@@terreno.getTamY.to_i and @@prevResult.getY.to_i>=0 %>
+                    Coordenadas finales en y: <%=@@prevResult.getY%>
+                <% else %>
+                    Coordenadas en y erroneas
+                <% end %> 
+            </h2>
+
+            <h2>
+                Orientacion final: <%=@@prevResult.getOrientacion%>
+            </h2>
+
+            <h2>
+                Movimientos: <%=@@prevResult.getInputMoves%>
+            </h2>
+    </div>
+
+<%#---------------------------------------------------------------------------------------------------------------- %>
+    <div class="content-after">
+            <h1> Coordenadas finales </h1>
+
+            <h2>
+                <% if @@auto.getX.to_i<=@@terreno.getTamX.to_i and @@auto.getX.to_i>=0 %>
+                    Coordenadas finales en x: <%=@@auto.getX%>
+                <% else %>
+                    Coordenadas en x erroneas
+                <% end %>
+            </h2>
+
+            <h2>
+                <% if @@auto.getY.to_i<=@@terreno.getTamY.to_i and @@auto.getY.to_i>=0 %>
+                    Coordenadas finales en y: <%=@@auto.getY%>
+                <% else %>
+                    Coordenadas en y erroneas
+                <% end %> 
+            </h2>
+
+            <h2>
+                Orientacion final: <%=@@auto.getOrientacion%>
+            </h2>
+
+            <h2>
+                Movimientos: <%=@@auto.getInputMoves%>
+            </h2>
+    </div>
+    <button onclick="location.href='http://localhost:4567/'">Volver al inicio </button>
+</section>
+</body>

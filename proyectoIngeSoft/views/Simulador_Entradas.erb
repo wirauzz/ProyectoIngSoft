@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <section class="form_wrap">
+        <div class="title">
+            <center><h1>Bienvenido al simulador </h1></center> 
+        </div>
+        <br>
+        <h2>Tamaño del mapa</h2>
+        <form method='post' action='/entradas'>
+            Tamaño x: <input type='text' name='tam_x'>
+            Tamaño y: <input type='text' name='tam_y'>
+            <br><br>
+      
+            <% for i in 0..@@autos.length-1 do%>
+                <h2>Coordenadas iniciales del vehiculo: <%=i+1%> </h2>
+                Coordenada x: <input type='text' name='<%=i%>_coo_x'>
+                Coordenada y: <input type='text' name='<%=i%>_coo_y'>
+                <br>
+                Orientacion:  
+                <select name= '<%=i%>_ori'>
+                    <option value="N">Norte</option> 
+                    <option value="S">Sur</option> 
+                    <option value="E">Este</option> 
+                    <option value="O">Oeste</option> 
+                </select>
+                <h2> Movimientos <%=i+1%> </h2>
+                Movimientos: <input type='text' name='<%=i%>_input_moves'>
+                <br>
+            <%end%>
+            <input type="submit" value='Publicar'>
+        </form>
+    </section>
+</body>
+</html>
+

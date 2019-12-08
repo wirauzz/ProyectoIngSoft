@@ -1,0 +1,46 @@
+
+<body>
+    <section class="form_wrap">
+        <div class="title">
+            <center><h1>Vista Previa </h1></center> 
+        </div>
+        <div class="content">
+            <h1> Tamaño del mapa:  [<%=@@terreno.getTamX%> x <%=@@terreno.getTamY%>] </h1>
+
+ 
+            <% for i in 0..@@autos.length-1 do%>
+
+                <h1> Coordenades iniciales <%=i%></h1>
+
+                <h2>
+                    <% if @@autos[i].getX.to_i<=@@terreno.getTamX.to_i and @@autos[i].getX.to_i>=0 %>
+                        Coordenadas en x: <%=@@autos[i].getX%>
+                    <% else %>
+                        Coordenades en x erroneas
+                    <% end %>
+                </h2>
+
+                <h2>
+                    <% if @@autos[i].getY.to_i<=@@terreno.getTamY.to_i and @@autos[i].getY.to_i>=0 %>
+                        Coordenadas en y: <%=@@autos[i].getY%>
+                    <% else %>
+                        Coordenades en y erroneas
+                    <% end %> 
+                </h2>
+
+                <h2>Orientacion: <%=@@autos[i].getOrientacion%></h2>
+
+                <h2>Movimientos: <%=@@autos[i].getInputMoves%></h2>
+
+            <%end%>
+
+        </div>
+
+
+        <button onclick="location.href='http://localhost:4567/'">Volver al inicio </button>
+        <button onclick="location.href='http://localhost:4567/Resultados'">Simular! </button>
+        
+        </h2>
+    </section>
+</body>
+

@@ -1,0 +1,65 @@
+body{ 
+    padding:10;
+    margin:10;
+    background-image: url(robot.jpg);
+    background-repeat: no-repeat;
+    background-size: 1000px auto;
+      background-position: right;
+}
+ 
+.title h1{
+    text-align: center;
+    color: #4c4c4c;
+    font-size:30px;
+    padding-top: 20px;
+    margin: 0;
+}
+.form_wrap{
+    width: 860px;
+    height: 630px;
+    margin: 0px 0px 90px 0px;
+    /*display: flex;*/
+    background: linear-gradient(to bottom, rgba(183,222,237,1) 0%, rgba(183,222,237,1) 23%, rgba(33,180,226,1) 59%, rgba(101,148,230,1) 96%, rgba(101,148,230,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#6594e6', GradientType=0 );
+    /*background: #4c4c4c;*/
+    /*background:url('../img/robot1.jpg');*/
+    border-radius: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #4c4c4c;
+    color: #4c4c4c;
+    text-align: center;
+    vertical-align:left;
+    /*opacity: 5;*/
+}
+input[type=text] {
+    padding: 5px 5px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 2px solid #4c4c4c;
+    border-radius: 4px;
+}
+input[type=submit] {
+    background-color: #4c4c4c;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    /*cursor: pointer;*/
+    border-radius: 4px;
+    float:none;
+    text-align:center;
+}
+select[name= 'ori'] {
+    background-color: #4c4c4c;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-decoration: none;
+    margin: 4px 4px;
+    /*cursor: pointer;*/
+    border-radius: 4px;
+    float:none;
+    text-align:center;
+}
