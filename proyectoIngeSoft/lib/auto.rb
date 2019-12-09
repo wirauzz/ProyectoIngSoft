@@ -97,12 +97,6 @@ class Auto
         end
     end
 
-    /Setter de las variables /
-
-
-    /getter de las variables/
-
-
 end
 
         

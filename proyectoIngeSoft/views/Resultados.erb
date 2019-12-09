@@ -126,27 +126,27 @@ button {
             <h1> Coordenadas finales </h1>
 
             <h2>
-                <% if @@auto.getX.to_i<=@@terreno.getTamX.to_i and @@auto.getX.to_i>=0 %>
-                    Coordenadas finales en x: <%=@@auto.getX%>
+                <% if @@autos[0].getX.to_i<=@@terreno.getTamX.to_i and @@autos[0].getX.to_i>=0 %>
+                    Coordenadas finales en x: <%=@@autos[0].getX%>
                 <% else %>
                     Coordenadas en x erroneas
                 <% end %>
             </h2>
 
             <h2>
-                <% if @@auto.getY.to_i<=@@terreno.getTamY.to_i and @@auto.getY.to_i>=0 %>
-                    Coordenadas finales en y: <%=@@auto.getY%>
+                <% if @@autos[0].getY.to_i<=@@terreno.getTamY.to_i and @@autos[0].getY.to_i>=0 %>
+                    Coordenadas finales en y: <%=@@autos[0].getY%>
                 <% else %>
                     Coordenadas en y erroneas
                 <% end %> 
             </h2>
 
             <h2>
-                Orientacion final: <%=@@auto.getOrientacion%>
+                Orientacion final: <%=@@autos[0].getOrientacion%>
             </h2>
 
             <h2>
-                Movimientos: <%=@@auto.getInputMoves%>
+                Movimientos: <%=@@autos[0].getInputMoves%>
             </h2>
     </div>
     <button onclick="location.href='http://localhost:4567/'">Volver al inicio </button>
