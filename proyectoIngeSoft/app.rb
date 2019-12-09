@@ -27,7 +27,7 @@ post '/entradas' do
         @@autos[i].setInputMoves(params[ i.to_s + "_input_moves"])
     end    
     @@prevResult = @@autos[0].dup()
-    erb:Resultados
+    redirect to('/Resultados')
 end
 
 get '/Resultados' do
