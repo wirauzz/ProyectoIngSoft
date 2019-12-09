@@ -2,7 +2,7 @@ require 'sinatra'
 require './lib/auto.rb'
 require './lib/terreno.rb'
 
-
+@@autos = []
 @@terreno = Terreno.new
 @@prevResult = Auto.new
 
@@ -11,7 +11,10 @@ get '/' do
 end
 
 post '/num_autos' do
-    @@autos = Array.new(params[:quantity].to_i(), Auto.new())
+    for i in 0..params[:quantity].to_i() do
+        @@autos << Auto.new
+    end
+
     erb:Simulador_Entradas
 end
 
