@@ -3,7 +3,6 @@ require './lib/auto.rb'
 require './lib/terreno.rb'
 
 
-@@autos = []
 @@terreno = Terreno.new
 @@prevResult = Auto.new
 
@@ -17,8 +16,8 @@ post '/num_autos' do
 end
 
 post '/entradas' do
-    @@terreno.setTamX(params[:tam_x].to_i)
-    @@terreno.setTamY(params[:tam_y].to_i)
+    @@terreno.setTamX(params['tam_x'].to_i)
+    @@terreno.setTamY(params['tam_y'].to_i)
     for i in 0..@@autos.length()-1 do
         @@autos[i].setX(params[ i.to_s + '_coo_x'].to_i)
         @@autos[i].setY(params[ i.to_s + '_coo_y'].to_i)
