@@ -8,7 +8,7 @@
             <h1> Tamaño del mapa:  [<%=@@terreno.getTamX%> x <%=@@terreno.getTamY%>] </h1>
 
  
-            <% for i in 0..@@autos.length-1 do%>
+            <% for i in 0..@@autos.length()-1 do%>
 
                 <h1> Coordenades iniciales <%=i%></h1>
 
@@ -39,8 +39,6 @@
 
         <button onclick="location.href='http://localhost:4567/'">Volver al inicio </button>
         <button onclick="location.href='http://localhost:4567/Resultados'">Simular! </button>
-        
-        </h2>
     </section>
 </body>
 
