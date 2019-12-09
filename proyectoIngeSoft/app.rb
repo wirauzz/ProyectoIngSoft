@@ -26,10 +26,7 @@ post '/entradas' do
         @@autos[i].setY(params[ i.to_s + '_coo_y'].to_i)
         @@autos[i].setOrientacion(params[ i.to_s + "_ori"])
         @@autos[i].setInputMoves(params[ i.to_s + "_input_moves"])
-    end
-    
-    #@@prevResult = @@autos.dup()
-    
+    end    
     erb:Vista_previa
 end
 
