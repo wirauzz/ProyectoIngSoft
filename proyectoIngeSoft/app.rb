@@ -4,7 +4,7 @@ require './lib/terreno.rb'
 
 @@autos = []
 @@terreno = Terreno.new
-@@prevResult = Auto.new
+@@prevResults = []
 
 get '/' do
     erb:simulador_inicio
@@ -25,30 +25,34 @@ post '/entradas' do
         @@autos[i].setY(params[ i.to_s + '_coo_y'].to_i)
         @@autos[i].setOrientacion(params[ i.to_s + "_ori"])
         @@autos[i].setInputMoves(params[ i.to_s + "_input_moves"])
+        @@prevResults[i] = @@autos[i].dup()
     end    
-    @@prevResult = @@autos[0].dup()
     redirect to('/Resultados')
 end
 
 get '/Resultados' do
 
-    for i in 0..@@autos[0].getInputMoves.length-1 do
-        if @@autos[0].getInputMoves[i] == "L" or @@autos[0].getInputMoves[i] =="R"
-             @@autos[0].girarAuto(@@autos[0].getInputMoves[i])
-        
-        else
-            if  @@autos[0].getInputMoves[i] == "U"
-                @@autos[0].avanzar()
-                if @@autos[0].getX == @@terreno.getTamX or @@autos[0].getY == @@terreno.getTamY 
-                    @@autos[0].retroceder()
-                end 
+    for i in 0..@@autos.length()-1 do
+        for j in 0..@@autos[i].getInputMoves.length-1 do
+            if @@autos[i].getInputMoves[j] == "L" or @@autos[i].getInputMoves[j] =="R"
+                 @@autos[i].girarAuto(@@autos[i].getInputMoves[i])
+            
             else
-                @@autos[0].retroceder()
-                if @@autos[0].getX == @@terreno.getTamX or @@autos[0].getY == @@terreno.getTamY 
-                    @@autos[0].avanzar()
-                end
-            end 
+                if  @@autos[i].getInputMoves[j] == "U"
+                    @@autos[i].avanzar()
+                    if @@autos[i].getX == @@terreno.getTamX or @@autos[i].getY == @@terreno.getTamY 
+                        @@autos[i].retroceder()
+                    end 
+                else
+                    @@autos[i].retroceder()
+                    if @@autos[i].getX == @@terreno.getTamX or @@autos[i].getY == @@terreno.getTamY 
+                        @@autos[i].avanzar()
+                    end
+                end 
+            end
         end
     end
+
+    
     erb:Resultados
 end
