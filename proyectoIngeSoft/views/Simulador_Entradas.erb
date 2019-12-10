@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>
+        body { 
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-image: url('/images/bg_image.jpg');
+        }
+
+        .formWraper {
+            background-color: rgba(200, 200, 200, 0.65);
+            width:350px;
+            height:auto;
+            margin:50px auto 0;
+            padding:50px;
+            color:#333;
+            border:2px solid #C2D6FF;
+            border-radius:40px 0 40px 0
+        }
+
+        .inputLarge {
+            width: 800px;
+            margin: 25px auto 0;
+        }
+
+        h1, h2 {
+            color: white;
+            text-shadow: 2px 2px black;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 20px 45%;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
     <section class="form_wrap">
@@ -12,13 +52,18 @@
             <center><h1>Bienvenido al simulador </h1></center> 
         </div>
         <br>
-        <h2>Tamaño del mapa</h2>
-        <form method='post' action='/entradas'>
-            Tamaño x: <input type='text' name='tam_x'>
-            Tamaño y: <input type='text' name='tam_y'>
+        <div class="formWraper" >
+          <h2>Tamaño del mapa</h2>
+      
+           <form method='post' action='/entradas'>
+            <label>Tamaño x: </label><input type='text' name='tam_x'>
             <br><br>
+            Tamaño y: <input type='text' name='tam_y'>
+            <br>
+        </div>
       
             <% for i in 0..@@autos.length()-1 do%>
+            <div class="formWraper inputLarge">
                 <h2>Coordenadas iniciales del vehiculo: <%=i+1%> </h2>
                 Coordenada x: <input type='text' name='<%=i%>_coo_x'>
                 Coordenada y: <input type='text' name='<%=i%>_coo_y'>
@@ -33,6 +78,7 @@
                 <h2> Movimientos <%=i+1%> </h2>
                 Movimientos: <input type='text' name='<%=i%>_input_moves'>
                 <br>
+            </div>
             <%end%>
             <input type="submit" value='Publicar'>
         </form>

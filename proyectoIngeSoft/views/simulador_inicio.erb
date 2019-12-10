@@ -4,14 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheets" type="text/css" href="./public/stylesheets/style.css">
+    <link rel="stylesheets" type="text/css" href="/public/stylesheets/style.css">
     <title>Document</title>
+
+    <style>
+    body { 
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-image: url('/images/bg_image.jpg');
+    }
+
+    .formWraper {
+        background-color: rgba(200, 200, 200, 0.65);
+        width:350px;
+        height:auto;
+        margin:50px auto 0;
+        padding:50px;
+        color:#333;
+        border:2px solid #C2D6FF;
+        border-radius:40px 0 40px 0
+    }
+
+    h1, h2 {
+        color: white;
+        text-shadow: 2px 2px black;
+    }
+
+    input[type=number] {
+        background-color: black;
+        color: white;
+        height: 20px;
+    }
+
+
+
+    </style>
 </head>
 <body>
-    <section class="form_wrap">
-        <div class="title">
-            <center><h1>Bienvenido al simulador </h1></center> 
-        </div>
+    <div class="title">
+        <center><h1>Bienvenido al simulador </h1></center> 
+    </div>
+    <center>
+    <div class="formWraper">
         <form method='post' action='/num_autos'>
             <br>
             <h2> Definir el numero de autos </h2>
@@ -19,7 +53,8 @@
                 <br><br>
             <input type="submit" value='Siguiente'>
         </form>
-    </section>
+    </div>
+    </center>
 </body>
 </html>
 
