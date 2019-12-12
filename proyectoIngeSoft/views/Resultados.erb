@@ -10,6 +10,7 @@
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-image: url('/images/bg_image.jpg');
+        background-size: 100% auto;
     }
 
     .formWraper .form_wrap{
@@ -70,6 +71,7 @@
         <h1> Tamaño del mapa:  [<%=@@terreno.getTamX%> x <%=@@terreno.getTamY%>] </h1>
 
         <% for i in 0..@@prevResults.length()-1 do%>
+        <h1> Vehiculo <%=i%> </h1>
             <div class="content-prev">
                 <h1> Coordenades iniciales en el vehiculo: <%=i+1%></h1>
                 <h2>
@@ -97,7 +99,7 @@
                 </h2>
             </div>
             <div class="content-after">
-                    <h1> Coordenadas finales <%=i+1%></h1>
+                    <h1> Coordenadas finales en el vehiculo: <%=i+1%></h1>
 
                     <h2>
                         <% if @@autos[i].getX.to_i<=@@terreno.getTamX.to_i and @@autos[i].getX.to_i>=0 %>
