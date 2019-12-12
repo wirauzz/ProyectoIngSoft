@@ -17,6 +17,10 @@ post '/num_autos' do
     erb:Simulador_Entradas
 end
 
+get '/num_autos' do
+    erb:Simulador_Entradas
+end
+
 post '/entradas' do
     @@terreno.setTamX(params['tam_x'].to_i)
     @@terreno.setTamY(params['tam_y'].to_i)

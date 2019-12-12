@@ -11,10 +11,22 @@ Given("Lleno los valores del terrenoy en {string} con {string}") do |valor, camp
   fill_in(campo, :with => valor)
 end 
 
-When "Presiono el boton {string}" do |boton|
+Given("Llena la coordenadax  en {string} con {string}") do |valor, campo|
+  fill_in(campo, :with => valor)
+end
+
+Given("Llena la coordenaday  en {string} con {string}") do |valor, campo|
+  fill_in(campo, :with => valor)
+end
+
+Given("Llena la orientacion  en {string} con {string}") do |valor, campo|
+  fill_in(campo, :with => valor)
+end
+
+Given("Llena el movimiento  en {string} con {string}") do |valor, campo|
+  fill_in(campo, :with => valor)
+end
+When "Presiono el boton publicar {string}" do|boton|
   click_button(boton)
 end
 
-Then("Devuelve {string}") do |string|
-  last_response.body.should =~ /#{string}/m
-end
