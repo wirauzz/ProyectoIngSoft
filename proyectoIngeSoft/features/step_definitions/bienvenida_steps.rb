@@ -10,6 +10,6 @@ Given("Lleno la cantidad de autos con {string} en {string}") do |valor, campo|
   fill_in(campo, :with => valor)
 end 
 
-When "Presiono el boton {string}"do |boton|
+When ("Presiono el boton {string}")do |boton|
     click_button(boton)
   end
