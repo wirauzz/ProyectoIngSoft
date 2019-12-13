@@ -62,25 +62,12 @@
             Tamaño y: <input type='text' name='tam_y'>
             <br>
         </div>
-         <h2>Coordenadas iniciales del vehiculo:</h2>
-                Coordenada x: <input type='text' name='_coo_x'>
-                Coordenada y: <input type='text' name='0_coo_y'>
-                <br>
-                Orientacion:  
-                <select name= 'ori'>
-                    <option value="N">Norte</option> 
-                    <option value="S">Sur</option> 
-                    <option value="E">Este</option> 
-                    <option value="O">Oeste</option> 
-                </select>
-                <h2> Movimientos  </h2>
-                Movimientos: <input type='text' name='0_input_moves'>
-                <br>
+        
       
             <% for i in 0..@@autos.length()-1 do%>
             <div class="formWraper inputLarge">
                 <h2>Coordenadas iniciales del vehiculo: <%=i+1%> </h2>
-                Coordenada x: <input type='text' name='<%=i%>_coo_x'>
+                Coordenada x: <input type='text' id="coordenax" name ='<%=i%>_coo_x'>
                 Coordenada y: <input type='text' name='<%=i%>_coo_y'>
                 <br>
                 Orientacion:  

@@ -86,4 +86,10 @@ RSpec.describe Auto do
         auto.retroceder()
         expect(auto.getY()).to eq (4)
     end
+    it 'Deberia devolver 4 cuando se envia E' do
+        auto.setOrientacion('E')
+        auto.setX(4)
+        auto.retroceder()
+        expect(auto.getX()).to eq (3)
+    end
 end
